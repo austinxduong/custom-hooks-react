@@ -1,24 +1,32 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Avatar from './Character';
 
-// import { useCharacters } 
+import { useCharacters } from '../../state/character';
 
 const AvatarList = () => {
-  const [characters, loading] = useCharacters();
-  //   line 8, we will come back to this file. well have to create state hook
-  const characterItems = characters.map((character) => {
-    return (
-      <li key={character.id}>
-        <Avatar {...character} />
-      </li>
-    );
-  });
+  const [page, setPage] = useState(1);
+  const { characters, loading } = useCharacters(page);
+  if(loading) return <h1>en route...</h1>;
 
-  if(loading) return <h1>en route....</h1>;
+  const characterElements = characters.map((character) => (
+    <li key={character._id}>
+      <Link to={`/${character._id}`}>
+        <Avatar {...character} />
+      </Link>
+    </li>
+  ));
+
   return (
     <>
-      <ul>{characterItems}</ul>;
+      <button
+        disabled ={page <= 1}
+        onClick={() => setPage((prevPage) => prevPage - 1)}>
+                    &lt;
+      </button>
+      {page}
+      <button onClick={() => setPage((prevPage) => prevpage + 1)}>&gt;</button>
+      <ul>{characterElements}</ul>
     </>
   );
 };
