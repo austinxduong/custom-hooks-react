@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Avatar from './Character';
 
@@ -25,7 +25,7 @@ const AvatarList = () => {
                     &lt;
       </button>
       {page}
-      <button onClick={() => setPage((prevPage) => prevpage + 1)}>&gt;</button>
+      <button onClick={() => setPage((prevPage) => prevPage + 1)}>&gt;</button>
       <ul>{characterElements}</ul>
     </>
   );
