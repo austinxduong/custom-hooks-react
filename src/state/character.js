@@ -15,6 +15,17 @@ export const useCharacters = (page) => {
   return { characters, loading };
 };
 
+export const useCharacter = (id) => {
+  const [character, setCharacter] = useState(null);
+
+  useEffect(() => {
+    fetchCharacterById(id).then(setCharacter);
+  }, []);
+
+  return character;
+};
+
+
 
 // const useCharacters = () => {
 //   const [characters, setCharacters] = useState([]);
