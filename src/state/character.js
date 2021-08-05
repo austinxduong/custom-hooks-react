@@ -1,20 +1,33 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import { fetchAllCharacters, fetchCharacterById } from '../services/avatarApi';
 
 
-const useCharacters = () => {
-  const [characters, setCharacters] = useState([]);
+export const useCharacters = (page) => {
   const [loading, setLoading] = useState(true);
+  const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
-    fetchAllCharacters()
-      .then(characters => setCharacters(characters))
+    fetchAllCharacters(page)
+      .then(setCharacters)
       .finally(() => setLoading(false));
-  }, []);
+  }, [page]);
 
-  return [characters, loading];
+  return { characters, loading };
 };
+
+
+// const useCharacters = () => {
+//   const [characters, setCharacters] = useState([]);
+//   const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     fetchAllCharacters()
+//       .then(characters => setCharacters(characters))
+//       .finally(() => setLoading(false));
+//   }, []);
+
+//   return [characters, loading];
+// };
 
 
 // const useCharacter = () => {
@@ -31,4 +44,6 @@ const useCharacters = () => {
 //   return [character, loading];
 // };
 
-export { useCharacters };
+// export { useCharacters };
+
+
