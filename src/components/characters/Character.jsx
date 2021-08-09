@@ -6,13 +6,13 @@ const Avatar = ({ name, allies, photoUrl }) => (
   <figure>
     <img src={photoUrl} alt={name} />
     <figcaption>
-      <h2>{name}</h2>
+      <p>{name}</p>
       <p>{allies}</p>
     </figcaption>
   </figure>
 );
 
-Avatar.PropTypes = {
+Avatar.propTypes = {
   name: PropTypes.string.isRequired,
   allies: PropTypes.string.isRequired,
   photoUrl: PropTypes.string.isRequired,

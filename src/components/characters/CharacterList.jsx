@@ -4,7 +4,7 @@ import Avatar from './Character';
 
 import { useCharacters } from '../../state/character';
 
-const AvatarList = () => {
+const CharacterList = () => {
   const [page, setPage] = useState(1);
   const { characters, loading } = useCharacters(page);
   if(loading) return <h1>en route...</h1>;
@@ -31,7 +31,7 @@ const AvatarList = () => {
   );
 };
 
-export default AvatarList;
+export default CharacterList;
 
 
 
