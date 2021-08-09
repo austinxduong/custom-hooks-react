@@ -1,6 +1,8 @@
 .Header {
-    background-color: teal;
-    color: black;
+    background-color: lightseagreen;
+    color:black;
     padding: 0 2em;
-    height: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    height: 3em;
 }

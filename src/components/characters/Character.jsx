@@ -6,8 +6,8 @@ const Avatar = ({ name, allies, photoUrl }) => (
   <figure>
     <img src={photoUrl} alt={name} />
     <figcaption>
-      <p>{name}</p>
-      <p>{allies}</p>
+      <p>Name: {name}</p>
+      <p>Allies: {allies}</p>
     </figcaption>
   </figure>
 );
