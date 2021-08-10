@@ -4,7 +4,7 @@ import App from './App';
 import { MemoryRouter } from 'react-router-dom';
 
 describe('App component', () => {
-  it('displays api list of Avatars', async () => {
+  it('renders parent api component to app.js homepage', async () => {
     render(
       <MemoryRouter initialEntries={['/']}>
         <App />
