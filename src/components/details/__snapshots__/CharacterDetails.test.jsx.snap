@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar component aka Character.jsx renders individual character from Avatar component 1`] = `
+<DocumentFragment>
+  <h1>
+    en route...
+  </h1>
+</DocumentFragment>
+`;

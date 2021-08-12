@@ -11,6 +11,7 @@ describe('Avatar component aka Character.jsx', () => {
         <Avatar
           name= "idk"
           allies= "animal"
+
         />
       </MemoryRouter>
     );
